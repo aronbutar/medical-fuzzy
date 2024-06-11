@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        header {
+            background-color: #1E90FF;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center; /* Centering the content */
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #1E90FF;
+            color: white;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #1E90FF;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        form input {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+        }
+        form button {
+            padding: 15px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            max-width: 500px;
+        }
+        form button:hover {
+            background-color: #1C86EE;
+        }
+        .auth-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Register</h1>
+        </header>
+        <main>
+            <section class="auth-form">
+                <h2>Create an Account</h2>
+                <form action="{{ url_for('register') }}" method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Patient Diagnosis System</p>
+        </footer>
+    </div>
+</body>
+</html>
